@@ -29,20 +29,25 @@ const Navbar = () => {
           initial={{ y: -100 }}
           animate={{ y: 0, transition: { duration: 0.5, ease: 'easeInOut' } }}
           className={`fixed top-0 z-50 w-[90%] transition-all duration-500  mt-6 rounded-2xl
-        ${isScrolled ? 'bg-white/60 text-black shadow-md backdrop-blur-md' : 'bg-gradient-to-r transparent text-black'}`}
+        ${isScrolled ? 'bg-white/60 text-black shadow-md backdrop-blur-md' : 'bg-white/60 text-black'}`}
         >
           <div className="container mx-auto flex items-center justify-between h-[60px] md:h-[80px] px-4 md:px-6 lg:px-8">
             <div className="flex items-center gap-2">
-              <Image src="/image/al.png" width={100} height={100} className=" w-full" alt="Logo" />
+              <Link href={'/'}>
+                <Image src="/image/al.png" width={100} height={100} className=" w-full" alt="Logo" />
+              </Link>
               {/* <p className="text-xl md:text-3xl font-bold font-sans">PT. Handira Minergi Nusantara</p> */}
             </div>
 
             <div className="hidden lg:flex items-center gap-x-4">
+              <Link href="/howitwork" className={classOptionNav}>
+                How It Work
+              </Link>{' '}
               <Link href="/portofolio" className={classOptionNav}>
                 portofolio
               </Link>{' '}
               <Link href="/licensing" className={classOptionNav}>
-                Licensing
+                What is Licensing
               </Link>{' '}
               <Link href="/contact" className={classOptionNav}>
                 Contact
@@ -66,11 +71,14 @@ const Navbar = () => {
 
           {/* Menu Items */}
           <nav className="flex flex-col gap-6 text-xl text-center">
+            <Link href="/howitwork" className={classOptionNav}>
+              How It Work
+            </Link>{' '}
             <Link href="/portofolio" className={classOptionNav}>
               portofolio
             </Link>{' '}
             <Link href="/licensing" className={classOptionNav}>
-              Licensing
+              What is Licensing
             </Link>{' '}
             <Link href="/contact" className={classOptionNav}>
               Contact
