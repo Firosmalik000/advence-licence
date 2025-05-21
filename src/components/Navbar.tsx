@@ -29,11 +29,11 @@ const Navbar = () => {
           initial={{ y: -100 }}
           animate={{ y: 0, transition: { duration: 0.5, ease: 'easeInOut' } }}
           className={`fixed top-0 z-50 w-[90%] transition-all duration-500  mt-6 rounded-2xl
-        ${isScrolled ? 'bg-white/60 text-black shadow-md backdrop-blur-md' : 'bg-gradient-to-r from-gray-900 to-gray-700 text-white'}`}
+        ${isScrolled ? 'bg-white/60 text-black shadow-md backdrop-blur-md' : 'bg-gradient-to-r transparent text-black'}`}
         >
           <div className="container mx-auto flex items-center justify-between h-[60px] md:h-[80px] px-4 md:px-6 lg:px-8">
             <div className="flex items-center gap-2">
-              <Image src="/logo.png" width={100} height={100} className=" w-full" alt="Logo" />
+              <Image src="/image/al.png" width={100} height={100} className=" w-full" alt="Logo" />
               {/* <p className="text-xl md:text-3xl font-bold font-sans">PT. Handira Minergi Nusantara</p> */}
             </div>
 

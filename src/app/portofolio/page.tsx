@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -34,6 +35,21 @@ const portfolioItems = [
   },
 ];
 
+const projects = [
+  { title: 'Green Bin® kathy ireland®', image: '/image/1.png' },
+  { title: 'ireland pay®', image: '/image/2.png' },
+  { title: 'kathy ireland® Furniture Factory', image: '/image/3.png' },
+  { title: 'kathy ireland® Laundry', image: '/image/4.png' },
+  { title: 'kathy ireland® Logistics', image: '/image/5.jpeg' },
+  { title: 'DUCTS Air Duct Cleaning, Inc™', image: '/image/6.png' },
+  { title: 'Dude, I Need A Truck', image: '/image/7.png' },
+  { title: 'The eBike Shop', image: '/image/8.png' },
+  { title: 'ReadyLockers.com', image: '/image/9.png' },
+  { title: 'Aloha Mini Glow Golf', image: '/image/10.jpg' },
+  { title: 'German Kitchen Center', image: '/image/11.jpeg' },
+  { title: 'MainStreetChamber of Commerce', image: '/image/12.jpeg' },
+];
+
 const PortofolioPage = () => {
   return (
     <section className="relative mt-12 bg-white py-28 px-6 max-w-7xl mx-auto overflow-hidden">
@@ -50,7 +66,7 @@ const PortofolioPage = () => {
       </motion.div>
 
       {/* Portfolio cards */}
-      <div className="grid gap-12 md:grid-cols-2 relative z-10">
+      <div className="grid gap-12 md:grid-cols-2 relative z-10 mb-12">
         {portfolioItems.map((item, index) => (
           <motion.div
             key={index}
@@ -63,6 +79,27 @@ const PortofolioPage = () => {
           >
             <h3 className="text-2xl font-semibold text-indigo-700 mb-3 group-hover:underline decoration-pink-500/50 underline-offset-4">{item.title}</h3>
             <p className="text-gray-700 leading-relaxed">{item.description}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Projects Grid */}
+      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10">
+        {projects.map((item, index) => (
+          <motion.div
+            key={index}
+            custom={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeUp}
+            className="relative bg-white p-8 rounded-2xl border-l-4 shadow-xl transition duration-300 hover:shadow-2xl "
+          >
+            {/* Tambahkan wrapper div untuk mengatur tinggi */}
+            <div className="relative w-full h-64 mb-4 rounded-lg overflow-hidden">
+              <Image src={item.image || '/placeholder-image.png'} alt={item.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 300px" />
+            </div>
+            <h3 className="text-2xl text-center font-semibold text-indigo-700 mb-3">{item.title}</h3>
           </motion.div>
         ))}
       </div>
