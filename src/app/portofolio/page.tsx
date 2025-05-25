@@ -47,7 +47,7 @@ const projects = [
   { title: 'ReadyLockers.com', image: '/image/9.png' },
   { title: 'Aloha Mini Glow Golf', image: '/image/10.jpg' },
   { title: 'German Kitchen Center', image: '/image/11.jpeg' },
-  { title: 'MainStreetChamber of Commerce', image: '/image/12.jpeg' },
+  { title: 'MainStreetChamber of Commerce', image: '/image/c.png' },
 ];
 
 const PortofolioPage = () => {
