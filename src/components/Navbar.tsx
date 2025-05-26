@@ -41,7 +41,7 @@ const Navbar = () => {
 
             <div className="hidden lg:flex items-center gap-x-4">
               <Link href="/howitwork" className={classOptionNav}>
-                How It Work
+                How It Works
               </Link>{' '}
               <Link href="/portofolio" className={classOptionNav}>
                 Portofolio
@@ -72,7 +72,7 @@ const Navbar = () => {
           {/* Menu Items */}
           <nav className="flex flex-col gap-6 text-xl text-center">
             <Link href="/howitwork" className={classOptionNav}>
-              How It Work
+              How It Works
             </Link>{' '}
             <Link href="/portofolio" className={classOptionNav}>
               Portofolio
