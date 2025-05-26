@@ -44,7 +44,7 @@ const projects = [
   { title: 'DUCTS Air Duct Cleaning, Inc™', image: '/image/6.png' },
   { title: 'Dude, I Need A Truck', image: '/image/7.png' },
   { title: 'The eBike Shop', image: '/image/8.png' },
-  { title: 'ReadyLockers.com', image: '/image/a.jpg' },
+  { title: 'ReadyLockers.com', image: '/image/a.png' },
   { title: 'Aloha Mini Glow Golf', image: '/image/10.jpg' },
   { title: 'German Kitchen Center', image: '/image/11.jpeg' },
   { title: 'MainStreetChamber of Commerce', image: '/image/c.png' },
