@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaRegComments, FaTools, FaRocket, FaHandshake } from 'react-icons/fa';
+import Image from 'next/image';
 
 const steps = [
   {
@@ -32,15 +33,18 @@ const steps = [
 
 const Work = () => {
   return (
-    <section className=" py-32 px-6 flex flex-col md:flex-row  items-center justify-center ">
-      {/* Header */}
-      <div className="max-w-xl text-center md:text-left pb-8 mx-auto">
+    <section className="py-32 px-6 flex flex-col md:flex-row items-center justify-center gap-12">
+      {/* Header & Image */}
+      <div className="max-w-xl w-full text-center md:text-left">
         <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">How It Works</h2>
-        <p className="mt-4 text-gray-600 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">Our experienced team guides you through each step of turning your business into a scalable, licensed opportunity.</p>
+        <p className="mt-4 text-gray-600 text-lg leading-relaxed">Our experienced team guides you through each step of turning your business into a scalable, licensed opportunity.</p>
+        <div className="mt-6">
+          <Image width={500} height={500} src="/image/works.jpg" alt="How it works illustration" className="rounded-2xl shadow-lg w-full h-auto object-cover" />
+        </div>
       </div>
 
       {/* Steps */}
-      <div className="flex flex-col gap-6 max-w-xl w-full mx-auto">
+      <div className="flex flex-col gap-6 max-w-xl w-full">
         {steps.map((step, index) => (
           <motion.div
             key={index}
@@ -51,7 +55,7 @@ const Work = () => {
             className={`rounded-3xl shadow-lg p-7 flex items-start gap-5 border border-transparent hover:border-gray-300 transition-all duration-300 cursor-pointer ${step.color}`}
           >
             <div className="bg-white p-4 rounded-full shadow-md flex items-center justify-center">{step.icon}</div>
-            <div className="text-left">
+            <div>
               <h3 className="text-xl font-semibold text-gray-800">{step.title}</h3>
               <p className="text-gray-700 mt-2 text-sm leading-snug">{step.description}</p>
             </div>

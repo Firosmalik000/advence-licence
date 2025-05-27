@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -21,9 +22,11 @@ const LicensingPage = () => {
       {/* Dynamic Gradient Background Accents */}
       <div className="absolute -top-48 -left-48 w-[700px] h-[700px] bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 opacity-30 blur-[180px] rounded-full pointer-events-none"></div>
       <div className="absolute -bottom-48 -right-48 w-[600px] h-[600px] bg-gradient-to-br from-pink-100 via-indigo-100 to-purple-100 opacity-20 blur-[150px] rounded-full pointer-events-none"></div>
-
+      <div className="flex  items-center justify-center mt-10 w-full">
+        <Image src="/image/licencing.jpg" alt="expand" width={500} height={500} className="rounded-xl shadow-xl object-cover" />
+      </div>
       {/* Main Content Area */}
-      <motion.div className="mt-10 relative z-10" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+      <motion.div className="mt-4 relative z-10" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
         {/* Page Title */}
         <motion.h1 custom={0} variants={fadeUp} className="mb-10 text-center text-5xl  font-extrabold text-gray-900 leading-tight tracking-tight">
           Unlocking the Power of <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600">Licensing</span>

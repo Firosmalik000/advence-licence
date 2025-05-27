@@ -18,7 +18,7 @@ const Why = () => {
 
         {/* Video Section */}
         <div className="relative w-full pt-[56.25%] rounded-xl overflow-hidden shadow-lg">
-          <iframe src="https://player.vimeo.com/video/1072715206" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen className="absolute top-0 left-0 w-full h-full" title="Why Licensing Video"></iframe>
+          <iframe src="/image/video.mp4" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen className="absolute top-0 left-0 w-full h-full" title="Why Licensing Video"></iframe>
         </div>
       </div>
     </motion.div>

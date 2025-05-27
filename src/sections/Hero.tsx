@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="relative z-20 text-white text-center max-w-screen-xl w-full">
         {/* Optional Subtitle */}
         <motion.h2 whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: -30 }} transition={{ duration: 0.8 }} className="text-2xl sm:text-4xl md:text-5xl font-bold  mb-2 drop-shadow-lg">
-          Advence Licence
+          Advanced Licensing
         </motion.h2>
 
         <motion.h1 whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: -30 }} transition={{ duration: 0.8 }} className="text-2xl sm:text-4xl md:text-6xl font-bold  mb-4 leading-tight drop-shadow-lg">
