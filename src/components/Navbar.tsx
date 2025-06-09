@@ -1,10 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import { useState, useEffect } from 'react';
 
 import { FaTimes } from 'react-icons/fa';
 import { IoMenuSharp } from 'react-icons/io5';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const Navbar = () => {
@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="container mx-auto flex items-center justify-between h-[60px] md:h-[80px] px-4 md:px-6 lg:px-8">
             <div className="flex items-center gap-2">
               <Link href={'/'}>
-                <Image src="/image/al.png" width={150} height={150} className=" w-full" alt="Logo" />
+                <img src="/image/al.png" className="w-[200px] " alt="Logo" />
               </Link>
               {/* <p className="text-xl md:text-3xl font-bold font-sans">PT. Handira Minergi Nusantara</p> */}
             </div>

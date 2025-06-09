@@ -1,69 +1,64 @@
 'use client';
-/* eslint-disable react/no-unescaped-entities */
-import React from "react";
-import { TbBrandGmail } from "react-icons/tb";
-// import emailjs from '@emailjs/browser';
+import React, { useEffect } from 'react';
 
 const ContactPage = () => {
-	// const form = useRef<HTMLFormElement>(null);
-	// const [name, setName] = useState({
-	//   firstName: '',
-	//   lastName: '',
-	//   email: '',
-	// });
-	// const sendEmail = (e: React.FormEvent) => {
-	//   e.preventDefault();
-	//   if (!form.current) return;
+  useEffect(() => {
+    try {
+      const f = document.createElement('iframe');
+      f.src = 'https://forms.zohopublic.com/infoadvanced1/form/ALNationalExpansionForm/formperma/i6rbfAC0iV1M1OmUxBdDZcelkWuSqGSAyumRvxg860U?zf_rszfm=1';
+      f.style.border = 'none';
+      f.style.width = '100%';
+      f.style.minHeight = '500px'; // tinggi minimal awal
+      f.setAttribute('aria-label', 'Advanced Licensing National Expansion');
+      f.setAttribute('scrolling', 'no');
 
-	//   emailjs
-	//     .sendForm(
-	//       'service_7li8mtf', // ganti
-	//       'template_b0miw6q', // ganti
-	//       form.current,
-	//       'FWjZlyW--ybgR5SBH' // ganti
-	//     )
-	//     .then(
-	//       (result) => {
-	//         console.log('SUCCESS!', result.text);
-	//         alert('Pesan berhasil dikirim!');
-	//         form.current?.reset();
-	//       },
-	//       (error) => {
-	//         console.log('FAILED...', error.text);
-	//         alert('Terjadi kesalahan. Silakan coba lagi.');
-	//       }
-	//     );
-	// };
+      const d = document.getElementById('zf_div_form');
+      if (d) d.appendChild(f);
 
-	return (
-		<div className="min-h-screen flex items-center justify-center px-4 py-16 mt-12 bg-gray-50">
-			<div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10">
-				{/* Left Text Content */}
-				<div className="flex flex-col justify-center h-full">
-					<h2 className="text-4xl font-bold mb-6 text-gray-800">Contact Us</h2>
-					<p className="text-lg text-gray-600 leading-relaxed">
-						Whether you're looking to expand your current business through licensing or have a million-dollar idea you’re ready to take nationwide, now is the time to act.
-						<br />
-						<br />
-						Fill out the form to receive in-depth information and claim your free consultation. Let’s find out together if licensing is the game-changing move your business needs.
-					</p>
-				</div>
+      window.addEventListener(
+        'message',
+        function (event) {
+          const evntData = event.data;
+          if (evntData && typeof evntData === 'string') {
+            const zf_ifrm_data = evntData.split('|');
+            if (zf_ifrm_data.length === 2 || zf_ifrm_data.length === 3) {
+              const zf_perma = zf_ifrm_data[0];
+              const zf_ifrm_ht_nw = parseInt(zf_ifrm_data[1], 10) + 15 + 'px';
+              const iframe = d?.getElementsByTagName('iframe')[0];
+              if (iframe && iframe.src.includes('formperma') && iframe.src.includes(zf_perma)) {
+                if (iframe.style.height !== zf_ifrm_ht_nw) {
+                  iframe.style.height = zf_ifrm_ht_nw;
+                }
+              }
+            }
+          }
+        },
+        false
+      );
+    } catch (e) {
+      console.error('Zoho iframe injection error', e);
+    }
+  }, []);
 
-				{/* Right Form (Currently Commented) */}
-				<div className=" flex items-center justify-center p-8 rounded-xl  w-full">
-					{/* <form ref={form} onSubmit={sendEmail} className="space-y-4"> ... </form> */}
+  return (
+    <div className="min-h-screen px-4 py-16 mt-12 bg-gray-50 flex justify-center items-start">
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Left Content */}
+        <div className="flex flex-col justify-center h-full">
+          <h2 className="text-4xl font-bold mb-6 text-gray-800">Contact Us</h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Whether you’re looking to expand your current business through licensing or have a million-dollar idea you’re ready to take nationwide, now is the time to act.
+            <br />
+            <br />
+            Fill out the form to receive in-depth information and claim your free consultation. Let’s find out together if licensing is the game-changing move your business needs.
+          </p>
+        </div>
 
-					<a href="mailto:team@advancedlicensing.com" className="w-full flex items-center justify-center gap-2 bg-red-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-red-700 transition-all duration-300 shadow-xl no-underline">
-						<TbBrandGmail size={24} />
-						<span>Contact Us via Gmail</span>
-					</a>
-
-					{/* Optional button if needed */}
-					{/* <button></button> */}
-				</div>
-			</div>
-		</div>
-	);
+        {/* Right Form - Zoho Iframe Container */}
+        <div id="zf_div_form" className="w-full overflow-hidden" />
+      </div>
+    </div>
+  );
 };
 
 export default ContactPage;

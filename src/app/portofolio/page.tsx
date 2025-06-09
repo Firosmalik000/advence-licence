@@ -48,6 +48,7 @@ const projects = [
   { title: 'Aloha Mini Glow Golf', image: '/image/10.jpg', link: 'https://www.alohaminiglowgolf.com/' },
   { title: 'German Kitchen Center', image: '/image/11.jpeg' },
   { title: 'MainStreetChamber of Commerce', image: '/image/c.png', link: 'https://www.mainstreetchamber.org/' },
+  { title: 'The Computer Exorcist', image: '/image/exorcist.png', link: 'https://thecomputerexorcist.com/contact-and-events/becomeanexorcist/' },
 ];
 
 const PortofolioPage = () => {
