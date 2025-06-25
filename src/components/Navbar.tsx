@@ -44,7 +44,7 @@ const Navbar = () => {
                 How It Works
               </Link>{' '}
               <Link href="/portofolio" className={classOptionNav}>
-                Portofolio
+                Portfolio
               </Link>{' '}
               <Link href="/licensing" className={classOptionNav}>
                 What is Licensing
@@ -75,7 +75,7 @@ const Navbar = () => {
               How It Works
             </Link>{' '}
             <Link href="/portofolio" className={classOptionNav}>
-              Portofolio
+              Portfolio
             </Link>{' '}
             <Link href="/licensing" className={classOptionNav}>
               What is Licensing
